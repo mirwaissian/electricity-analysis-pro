@@ -4,8 +4,9 @@ import matplotlib.pyplot as plt
 from matplotlib.dates import DateFormatter  # Import DateFormatter for date formatting
 
 # Load the two CSV files
-cons = pd.read_csv('Electricity_20-09-2024.csv', delimiter=';')
-price = pd.read_csv('sahkon-hinta-010121-240924.csv')
+cons_url = 'https://raw.githubusercontent.com/mirwaissian/electricity-analysis-pro/main/Electricity_20-09-2024.csv'
+price_url = 'https://raw.githubusercontent.com/mirwaissian/electricity-analysis-pro/main/sahkon-hinta-010121-240924.csv'
+
 
 # Remove leading/trailing spaces in the 'Time' column and convert to datetime
 cons['Time'] = pd.to_datetime(cons['Time'].str.strip(), format='%d.%m.%Y %H:%M', dayfirst=True)
